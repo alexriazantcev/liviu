@@ -61,14 +61,10 @@ console.log(pdfjsLib);
 
 
 
-let page = pdfjsLib.getDocument('./test.pdf');
-/*
+let pdf = pdfjsLib.getDocument('./test.pdf');
+
 function render() {
-    myState.pdf.getPage(myState.currentPage).then((page) => {
- 
-        // more code here
- 
-    });
+    let page = myState.pdf.getPage(myState.currentPage);
 }
 
 var canvas = document.getElementById("pdf_renderer");
@@ -78,7 +74,7 @@ var viewport = page.getViewport(myState.zoom);
 
 canvas.width = viewport.width;
 canvas.height = viewport.height;
-
+/*
 page.render({
     canvasContext: ctx,
     viewport: viewport
