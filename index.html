@@ -61,8 +61,8 @@ console.log(pdfjsLib);
 
 
 
-pdfjsLib.getDocument('./test.pdf');
-
+let page = pdfjsLib.getDocument('./test.pdf');
+/*
 function render() {
     myState.pdf.getPage(myState.currentPage).then((page) => {
  
@@ -84,8 +84,9 @@ page.render({
     viewport: viewport
 });
 
+*/
 
-
+console.log(page);
 
 console.log("end");
 
