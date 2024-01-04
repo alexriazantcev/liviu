@@ -63,7 +63,13 @@ console.log(pdfjsLib);
 
 pdfjsLib.getDocument('./test.pdf');
 
-
+function render() {
+    myState.pdf.getPage(myState.currentPage).then((page) => {
+ 
+        // more code here
+ 
+    });
+}
 
 
 
