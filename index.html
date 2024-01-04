@@ -63,9 +63,9 @@ console.log(pdfjsLib);
 
 let pdf = pdfjsLib.getDocument('./test.pdf');
 
-function render() {
+
     let page = myState.pdf.getPage(myState.currentPage);
-}
+
 
 var canvas = document.getElementById("pdf_renderer");
 var ctx = canvas.getContext('2d');
