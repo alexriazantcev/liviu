@@ -51,7 +51,7 @@
 console.log("begin");
 
 var myState = {
-        pdf: null,
+        pdf: 'test.pdf',
         currentPage: 1,
         zoom: 1
 }
@@ -70,6 +70,20 @@ function render() {
  
     });
 }
+
+var canvas = document.getElementById("pdf_renderer");
+var ctx = canvas.getContext('2d');
+ 
+var viewport = page.getViewport(myState.zoom);
+
+canvas.width = viewport.width;
+canvas.height = viewport.height;
+
+page.render({
+    canvasContext: ctx,
+    viewport: viewport
+});
+
 
 
 
