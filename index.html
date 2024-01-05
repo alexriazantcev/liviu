@@ -61,28 +61,33 @@ var myState = {
  
 //console.log(pdfjsLib);
 
+pdfjsLib.getDocument('./my_document.pdf').then((pdf) => {
+ 
+  myState.pdf = pdf;
+  render();
 
-
-
-let pdf = pdfjsLib.getDocument('test.pdf');
-
-console.log(myState.pdf);
-
-console.log(pdf);
-
-myState.pdf = pdf;
-
-console.log(myState.pdf);
+});
 
 function render() {
     myState.pdf.getPage(myState.currentPage).then((page) => {
+
+        var canvas = document.getElementById("pdf_renderer");
+        var ctx = canvas.getContext('2d');
  
-        // more code here
-        console.log(page);
+        var viewport = page.getViewport(myState.zoom);
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        page.render({
+        canvasContext: ctx,
+        viewport: viewport
+        });
+
     });
 }
 
-render();
+
 
 //var canvas = document.getElementById("pdf_renderer");
 //var ctx = canvas.getContext('2d');
