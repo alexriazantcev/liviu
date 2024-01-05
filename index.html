@@ -71,8 +71,15 @@ myState.pdf = pdf;
 
 console.log(myState.pdf);
 
-let page = pdf.getPage(myState.currentPage);
+function render() {
+    myState.pdf.getPage(myState.currentPage).then((page) => {
+ 
+        // more code here
+        console.log(page);
+    });
+}
 
+render();
 
 //var canvas = document.getElementById("pdf_renderer");
 //var ctx = canvas.getContext('2d');
