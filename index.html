@@ -56,24 +56,24 @@ var myState = {
         zoom: 1
 }
  
-console.log(pdfjsLib);
+//console.log(pdfjsLib);
 
 
 
 
 let pdf = pdfjsLib.getDocument('test.pdf');
+console.log(pdf);
+
+//let page = pdf.getPage(myState.currentPage);
 
 
-let page = pdf.getPage(myState.currentPage);
-
-
-var canvas = document.getElementById("pdf_renderer");
-var ctx = canvas.getContext('2d');
+//var canvas = document.getElementById("pdf_renderer");
+//var ctx = canvas.getContext('2d');
  
-var viewport = page.getViewport(myState.zoom);
+//var viewport = page.getViewport(myState.zoom);
 
-canvas.width = viewport.width;
-canvas.height = viewport.height;
+//canvas.width = viewport.width;
+//canvas.height = viewport.height;
 /*
 page.render({
     canvasContext: ctx,
@@ -82,7 +82,7 @@ page.render({
 
 */
 
-console.log(page);
+//console.log(page);
 
 console.log("end");
 
