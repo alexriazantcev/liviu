@@ -51,7 +51,7 @@
 console.log("begin");
 
 var myState = {
-        pdf: 'test.pdf',
+        pdf: null,
         currentPage: 1,
         zoom: 1
 }
@@ -62,7 +62,14 @@ var myState = {
 
 
 let pdf = pdfjsLib.getDocument('test.pdf');
+
+console.log(myState.pdf);
+
 console.log(pdf);
+
+myState.pdf = pdf;
+
+console.log(myState.pdf);
 
 //let page = pdf.getPage(myState.currentPage);
 
