@@ -61,7 +61,7 @@ var myState = {
  
 //console.log(pdfjsLib);
 
-pdfjsLib.getDocument('./my_document.pdf').then((pdf) => {
+pdfjsLib.getDocument('test.pdf').then((pdf) => {
  
   myState.pdf = pdf;
   render();
