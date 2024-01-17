@@ -106,6 +106,7 @@ page.render({
 
 //console.log(page);
 
+/*
 var c = document.getElementById('pdf_renderer');
 var ctx = c.getContext('2d');
 
@@ -130,8 +131,10 @@ function getImageURL(imgData, width, height) {
    ctx.putImageData(imgData, 0, 0);
    return canvas.toDataURL(); //image URL
 }
+*/
+var showPdfButton = document.querySelector('#show-pdf-button');
 
-
+showPdfButton.addEventListener(('click') => {console.log('sdfsdf')});
 
 
 console.log("end");
