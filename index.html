@@ -9,7 +9,7 @@
 <body>
     <div id="pdf_viewer">
         <div id="canvas_conteiner">
-            <canvas id="pdf_renderer" style="height: 400px"></canvas>
+            <canvas id="pdf_renderer"></canvas>
         </div>
     </div>
 
@@ -147,7 +147,14 @@ console.log("end");
 // рисуем на канвасе
 const canvas = document.getElementById('pdf-canvas');
 const context = canvas.getContext('2d');
-context.fillRect(100, 150, 200, 300);
+//context.fillRect(100, 150, 200, 300);
+// create a stroke
+context.beginPath();
+context.moveTo( 50, 100);
+context.lineTo(100, 150);
+context.stroke();
+// this ends the current path
+context.beginPath();
 
 
 
