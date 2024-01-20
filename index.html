@@ -153,12 +153,14 @@ console.log("end");
 const canvas = document.getElementById('pdf-canvas');
 const context = canvas.getContext('2d');
 //context.fillRect(100, 150, 200, 300);
+
 // create a stroke
+context.strokeStyle = 'red';
 context.beginPath();
 context.moveTo( 50, 100);
 context.lineTo(100, 150);
 context.stroke();
-context.strokeStyle = 'red';
+
 // this ends the current path
 context.beginPath();
 
