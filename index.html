@@ -61,15 +61,19 @@ var myState = {
  
 //console.log(pdfjsLib);
 
-pdfjsLib.getDocument('test.pdf').then((pdf) => {
+pdfjsLib.getDocument('test.pdf')
+.then((pdf) => {
  
   myState.pdf = pdf;
   render();
 
-});
+})
+.catch((err) => {console.error(err)});
+
 
 function render() {
-    myState.pdf.getPage(myState.currentPage).then((page) => {
+    myState.pdf.getPage(myState.currentPage)
+    .then((page) => {
 
         var canvas = document.getElementById("pdf_renderer");
         var ctx = canvas.getContext('2d');
@@ -84,8 +88,9 @@ function render() {
         viewport: viewport
         });
 
-    });
-}
+    })
+    .catch((err) => {console.error(err)});
+};
 
 
 /*
@@ -153,8 +158,10 @@ context.beginPath();
 context.moveTo( 50, 100);
 context.lineTo(100, 150);
 context.stroke();
+context.strokeStyle = 'red';
 // this ends the current path
 context.beginPath();
+
 
 
 
