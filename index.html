@@ -166,6 +166,68 @@ context.beginPath();
 
 
 
+// implement drawing
+let drawing = false;
+
+function startDrawing(e) {
+    drawing = true;
+    context.beginPath();
+    draw(e);
+}
+
+// window.addEventListener("mousedown", startDrawing);
+
+function endDrawing(e) {
+  drawing = false;
+}
+
+// window.addEventListener("mouseup", endDrawing);
+
+function getMousePos(canvas, evt) {
+  var rect = canvas.getBoundingClientRect(),
+    scaleX = canvas.width / rect.width,
+    scaleY = canvas.height / rect.height;
+
+  return {
+    x: (evt.clientX - rect.left) * scaleX,
+    y: (evt.clientY - rect.top) * scaleY,
+  };
+}
+
+function draw(e) {
+  if (!drawing) return;
+
+  let { x, y } = getMousePos(canvas, e);
+  context.lineTo(x, y);
+  context.stroke();
+}
+
+// window.addEventListener("mousemove", draw);
+
+context.lineWidth = 10;
+context.lineCap = "round";
+
+// implement drawing rectangle
+let start = {}
+
+function startRect(e) {
+    start = getMousePos(canvas, e);
+}
+
+window.addEventListener("mousedown", startRect);
+
+function endRect(e) {
+    let { x, y } = getMousePos(canvas, e);
+    context.fillRect(start.x, start.y, x - start.x, y - start.y);
+}
+
+window.addEventListener("mouseup", endRect);
+
+
+
+
+
+
 
     </script>
 </body>
