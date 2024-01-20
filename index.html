@@ -9,7 +9,7 @@
 <body>
     <div id="pdf_viewer">
         <div id="canvas_conteiner">
-            <canvas id="pdf_renderer"></canvas>
+            <canvas id="pdf_renderer" style="height: 400px"></canvas>
         </div>
     </div>
 
@@ -37,7 +37,7 @@
                 </div>
                 <div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
             </div>
-            <canvas id="pdf-canvas" width="400"></canvas>
+            <canvas id="pdf-canvas" width="400" height="400"></canvas>
             <div id="page-loader">Loading page ...</div>
         </div>
     </div>
@@ -143,6 +143,13 @@ showPdfButton.addEventListener('click', () => {screenshot()});
 
 
 console.log("end");
+
+// рисуем на канвасе
+const canvas = document.getElementById('pdf-canvas');
+const context = canvas.getContext('2d');
+context.fillRect(100, 150, 200, 300);
+
+
 
     </script>
 </body>
